@@ -1,0 +1,76 @@
+/*=============Header=============*/
+		html
+			{
+				border: 1px solid black;
+			}
+		body
+			{
+				font-family: "Trebuchet MS", sans-serif; 
+
+			}
+		
+		#header
+			{
+				background-color: #EEEEEE;
+				border-radius:5px;
+				padding: 5px 5px;
+			}
+
+		.headerText
+			{
+				font-weight:600;
+				font-size: 25px;
+				text-align: center;
+
+			}
+
+		#languages
+			{
+				clear: left;
+			}
+		
+		#inhtml
+			{
+				float: left;
+				text-align: center;
+				width: 300px;
+				
+				border-right: 3px solid #4ca20b;
+			}
+
+		#incss
+			{
+				float: left;
+				border-right: 3px solid #4ca20b;
+				width: 300px;
+				
+			}		
+
+		#injs
+			{
+				float: left;
+				border-right: 3px solid #4ca20b;
+				width: 300px;
+				
+				
+			}	
+
+		#display
+			{
+				float: left;
+				padding-left: 2%;
+				height: 100%;
+				
+				
+			}
+
+		#userarea
+			{
+				padding: 1% 1%;
+			}
+
+		.scriptarea
+			{
+				width:90%;
+				height: 30%;
+			}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CodeTester by Yann</title>
+	<script src="external/jquery/jquery.js"></script>
+	<script src="jquery-ui.js"></script>
+	<script src="functionality.js"></script>
+	<link href="jquery-ui.css" rel="stylesheet">
+	<link href="external/css/ctstyle.css" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+	</head>
+<body>
+
+<!--=========== Header ===========-->
+<div id="header">
+	<span class="headerText">CodeTester</span> by Yann
+	<div id="languages">
+		<button id="html">HTML</button>
+		<button id="css">CSS</button>
+		<button id="js">JavaScript</button>
+		<button id="output">Output</button>
+	</div>
+</div>
+<!--=================================-->
+
+<!--=========== Body ===========-->
+<div id="userarea">
+	<div id="inhtml">
+		<h3>HTML</h3>
+		<p>
+			<textarea class="scriptarea" id="htmlScript" rows="25%" placeholder="code HTML here"></textarea>
+		</p>
+	</div>
+	<div id="incss">
+		<h3>CSS</h3>
+		<p>
+			<textarea class="scriptarea" id="cssScript" rows="25%" placeholder="code CSS here"></textarea>
+		</p>
+	</div>
+	<div id="injs">
+		<h3>JS</h3>
+		<p>
+			<textarea class="scriptarea" id="jsScript" rows="25%" placeholder="Script JS here"></textarea>
+		</p>
+	</div>
+	<div id="display">
+		<h3>Display</h3>
+		<iframe>
+			<div>Type something in one of the scripting boxes...</div>	
+		</iframe>
+	</div>
+</div>
+<!--=================================-->
+<!--
+  	<script>
+/*==========Top bar controls==========*/
+  		$("#languages").controlgroup();
+		
+		$("#html").click(function()
+			{
+				$("#inhtml").toggle();
+			});
+
+		$("#css").click(function()
+			{
+				$("#incss").toggle();
+			});
+		
+		$("#js").click(function()
+			{
+				$("#injs").toggle();
+			});
+		
+		$("#output").click(function()
+			{
+				$("#display").toggle();
+			});		
+/*========================================*/
+
+/*==========Text fields==========*/
+
+
+	$("#inhtml,#incss,#injs,#display").height($(window).height() - $("#header").height()-20);
+
+	$(function()
+		{
+			$("#inhtml").resizable(
+				{
+					alsoResize:"#htmlScript"
+				});
+			$("#htmlScript").resizable(
+				{
+						containment:"#inhtml"
+				});
+
+			$("#incss").resizable(
+				{
+					alsoResize:"#cssScript"
+				});
+			$("#cssScript").resizable(
+				{
+						containment:"#incss"
+				});
+
+			$("#injs").resizable(
+				{
+					alsoResize:"#jsScript"
+				});
+			$("#jsScript").resizable(
+				{
+						containment:"#injs"
+				});
+		});
+/*========================================*/
+
+/*==========Display area functions==========*/
+
+
+$("#htmlScript,#cssScript,#jsScript").keyup(function()
+		{
+			var htmlScript = $("#htmlScript").val();	// saves HTML user input in a variable
+			var cssScript = $("#cssScript").val();		// saves CSS user input in a variable
+			var jsScript = $("#jsScript").val();		// saves JS user input in a variable
+			
+			$("iframe").contents().find("html").html("<html> <head> <style type='text/css'>"+ cssScript + "</style></head> <body>" + htmlScript + "</body></html>");
+			document.getElementsByTagName("iframe")[0].contentWindow.eval(jsScript);
+			/*selects the all iframes (only one on this page - no need for IDs)
+			selects child node 0, evaluates var jsScript in the content of the iframe*/
+		});
+
+			
+/*========================================*/
+
+	</script>-->
+</body>
+</html>
